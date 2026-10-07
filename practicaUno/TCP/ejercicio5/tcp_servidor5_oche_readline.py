@@ -1,7 +1,7 @@
 import socket
 import sys
 
-port = int(sys.argv[1]) if len(sys.argv) > 1 else 9998
+port = int(sys.argv[1]) if len(sys.argv) > 1 else 9999
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(("", port))
@@ -10,7 +10,7 @@ s.listen(5)
 while True:
     print("Esperando un cliente")
     sd, origen = s.accept()
-    f = sd.makefile(encoding="utf8", newline="\r\n")
+    f = sd.makefile(mode="r",encoding="utf8", newline="\r\n")
     print("Nuevo cliente conectado desde %s, %d" % origen)
     continuar = True
 

@@ -1,7 +1,7 @@
 import socket
 import sys
 
-port = int(sys.argv[1]) if len(sys.argv) > 1 else 9997
+port = int(sys.argv[1]) if len(sys.argv) > 1 else 9999
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(("", port))
